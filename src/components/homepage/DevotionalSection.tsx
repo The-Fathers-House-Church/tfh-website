@@ -6,10 +6,12 @@ import { sendCatchFeedback } from '@/functions/feedback';
 import { appAxios } from '@/api/axios';
 import LoadingIndicator from '@/common/LoadingIndicator/LoadingIndicator';
 import Button from '@/common/Button';
+import { useRouter } from 'next/router';
 
 const DevotionalSection = () => {
   const [devotional, setDevotional] = useState<DevotionalType | undefined>(undefined);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const getDevotional = async () => {
@@ -50,7 +52,14 @@ const DevotionalSection = () => {
               <p className='text-white font-normal mb-[34px] lg:text-xl'>
                 - {devotional.scripture2}
               </p>
-              <Button className='!w-[280px] !max-w-full'>Read Devotional</Button>
+              <Button
+                className='!w-[280px] !max-w-full'
+                onClick={() =>
+                  router.push('/devotional/details?id=' + devotional.dish_id)
+                }
+              >
+                Read Devotional
+              </Button>
             </>
           ) : (
             <span className='text-white'>No devotional found for today</span>
