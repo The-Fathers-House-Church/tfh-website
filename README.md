@@ -516,3 +516,9 @@ npm run start
 **Built with ❤️ for The Father's House Church**
 
 Visit us online at [https://tfh-website.netlify.app/](https://tfh-website.netlify.app/)
+
+
+### Church Website
+https://tfhconline.org.ng/
+
+Feel free to download and use as a template to create the website for the church you belong to
