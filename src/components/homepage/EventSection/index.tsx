@@ -13,19 +13,20 @@ const EventSection = () => {
   const { events } = useDraggable(ref);
 
   useEffect(() => {
-    const getDevotional = async () => {
+    const getEvents = async () => {
       try {
         setLoading(true);
         const response = await appAxios.get('/event?page=1');
         setData(response.data.data?.data);
       } catch (error) {
-        sendCatchFeedback(error);
+        console.log(error);
       } finally {
         setLoading(false);
       }
     };
-    getDevotional();
+    getEvents();
   }, []);
+
   return (
     <section id='events' className='event-bg px-primary pt-[90px] pb-[178px]'>
       <h2 className='text-primary font-bold text-[30px] lg:text-[40px] text-center font-secondary  mb-[11px]'>

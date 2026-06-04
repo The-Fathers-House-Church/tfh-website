@@ -20,13 +20,15 @@ const DevotionalSection = () => {
         const response = await appAxios.get('/devotional/today');
         setDevotional(response.data.devotional);
       } catch (error) {
-        sendCatchFeedback(error);
+        console.log(error);
       } finally {
         setLoading(false);
       }
     };
     getDevotional();
   }, []);
+
+  if (!devotional) return null;
 
   return (
     <section
