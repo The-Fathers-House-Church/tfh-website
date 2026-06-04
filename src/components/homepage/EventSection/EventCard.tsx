@@ -47,7 +47,7 @@ const EventCard = ({ event }: { event: EventType }) => {
       <div className='group-hover:opacity-100 absolute top-0 bottom-0 left-0 right-0 opacity-0 duration-500 transition-opacity flex items-center justify-center bg-[#151515BD] rounded-[10px]'>
         <Button
           className='!bg-transparent !border-[1.5px] !border-white !w-[273px] hover:!text-black hover:!bg-white !transition-colors'
-          onClick={() => router.push('/event/' + event.id)}
+          onClick={() => router.push('/events/details?id=' + event.id)}
         >
           More Details
         </Button>

@@ -6,7 +6,6 @@ import { sendCatchFeedback, sendFeedback } from '@/functions/feedback';
 import { capitalize } from '@/functions/stringManipulations';
 import { EventType } from '@/types/types';
 import { useFormik } from 'formik';
-import React from 'react';
 import * as yup from 'yup';
 
 const RegistrationForm = ({ event }: { event: EventType }) => {
@@ -22,7 +21,7 @@ const RegistrationForm = ({ event }: { event: EventType }) => {
           ...initial,
           [field.name]: field.type !== 'number' ? '' : 0,
         }),
-        {}
+        {},
       ),
       loading: false,
     },
@@ -38,8 +37,8 @@ const RegistrationForm = ({ event }: { event: EventType }) => {
               ? yup.string().required('Required')
               : yup.number().required('Required').typeError('Must be a number'),
         }),
-        {}
-      )
+        {},
+      ),
     ),
   });
 
@@ -53,7 +52,7 @@ const RegistrationForm = ({ event }: { event: EventType }) => {
             ...initial,
             [field.name]: formik.values[field.name],
           }),
-          {}
+          {},
         ),
       });
 
@@ -92,7 +91,7 @@ const RegistrationForm = ({ event }: { event: EventType }) => {
                   formik={formik}
                   className='mb-5'
                   value={formik.values[detail.name]}
-                  placeholder={capitalize(detail.name.split('_').join(' '))}
+                  placeholder={capitalize(detail.name?.split('_')?.join(' '))}
                   error={formik.errors[detail.name] as any}
                   showError={
                     formik.touched[detail.name] && formik.errors[detail.name]
@@ -110,7 +109,7 @@ const RegistrationForm = ({ event }: { event: EventType }) => {
                   formik={formik}
                   key={detail.name}
                   name={detail.name}
-                  placeholder={capitalize(detail.name.split('_').join(' '))}
+                  placeholder={capitalize(detail.name?.split('_')?.join(' '))}
                   type={detail.type === 'date' ? 'date' : 'text'}
                 />
               );
