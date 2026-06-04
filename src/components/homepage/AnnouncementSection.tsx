@@ -21,7 +21,7 @@ const AnnouncementSection = () => {
         const response = await appAxios.get('/announcement?page=1');
         setData(response.data.data?.data);
       } catch (error) {
-        sendCatchFeedback(error);
+        console.log(error);
       } finally {
         setLoading(false);
       }
