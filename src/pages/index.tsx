@@ -35,7 +35,7 @@ export default function Home() {
         })
       );
     } catch (error) {
-      sendCatchFeedback(error);
+      console.log(error);
     } finally {
       dispatch(setVideoLoading(false));
     }

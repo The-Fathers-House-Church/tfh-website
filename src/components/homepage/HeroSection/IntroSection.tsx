@@ -20,7 +20,7 @@ function IntroSection() {
             Find a Location
           </Button>
         </Link>
-        <Link href='/media'>
+        <Link href='/resources'>
           <Button className='lg:!h-[60px] h-[35px] lg:!w-[241px] lg:!text-lg !font-semibold'>
             Join us Online
           </Button>
