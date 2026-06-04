@@ -5,8 +5,8 @@ import { EventType } from '@/types/types';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import RegistrationForm from './RegistrationForm';
 import Gallery from './Gallery';
+import RegistrationForm from './RegistrationForm';
 
 const EventDescription = () => {
   const [details, setDetails] = useState<EventType | undefined>(undefined);
@@ -53,16 +53,16 @@ const EventDescription = () => {
     return allow;
   };
 
-  const generateCalendarLink = () => {
-    const nameString = details?.name.replace(/ /g, '+'); //replacing all spaces with plus
-    const dateString = new Date(details?.date || '')
-      .toISOString()
-      .split('T')[0]
-      .split('-')
-      .join(''); //did this to get the format: YYYYMMDD
-    const link = `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${dateString}%2F${dateString}&location=&text=${nameString}`;
-    return link;
-  };
+  // const generateCalendarLink = () => {
+  //   const nameString = details?.name.replace(/ /g, '+'); //replacing all spaces with plus
+  //   const dateString = new Date(details?.date || '')
+  //     .toISOString()
+  //     .split('T')[0]
+  //     .split('-')
+  //     .join(''); //did this to get the format: YYYYMMDD
+  //   const link = `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${dateString}%2F${dateString}&location=&text=${nameString}`;
+  //   return link;
+  // };
 
   const checkIfDateIsPassed = () => {
     const currentDate = new Date();
